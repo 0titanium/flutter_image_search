@@ -38,7 +38,6 @@ class _SearchListScreenState extends State<SearchListScreen> {
                   icon: const Icon(Icons.search),
                   onPressed: () {
                     final query = _queryTextEditingController.text;
-                    print(query);
                     viewModel.onSearch(query);
                   },
                 )),
