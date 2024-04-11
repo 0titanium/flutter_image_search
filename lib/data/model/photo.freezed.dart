@@ -22,7 +22,7 @@ Photo _$PhotoFromJson(Map<String, dynamic> json) {
 mixin _$Photo {
   int get id => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
-  String get tag => throw _privateConstructorUsedError;
+  String get tags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ abstract class $PhotoCopyWith<$Res> {
   factory $PhotoCopyWith(Photo value, $Res Function(Photo) then) =
       _$PhotoCopyWithImpl<$Res, Photo>;
   @useResult
-  $Res call({int id, String url, String tag});
+  $Res call({int id, String url, String tags});
 }
 
 /// @nodoc
@@ -52,7 +52,7 @@ class _$PhotoCopyWithImpl<$Res, $Val extends Photo>
   $Res call({
     Object? id = null,
     Object? url = null,
-    Object? tag = null,
+    Object? tags = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -63,9 +63,9 @@ class _$PhotoCopyWithImpl<$Res, $Val extends Photo>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      tag: null == tag
-          ? _value.tag
-          : tag // ignore: cast_nullable_to_non_nullable
+      tags: null == tags
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -78,7 +78,7 @@ abstract class _$$PhotoImplCopyWith<$Res> implements $PhotoCopyWith<$Res> {
       __$$PhotoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String url, String tag});
+  $Res call({int id, String url, String tags});
 }
 
 /// @nodoc
@@ -94,7 +94,7 @@ class __$$PhotoImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? url = null,
-    Object? tag = null,
+    Object? tags = null,
   }) {
     return _then(_$PhotoImpl(
       id: null == id
@@ -105,9 +105,9 @@ class __$$PhotoImplCopyWithImpl<$Res>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      tag: null == tag
-          ? _value.tag
-          : tag // ignore: cast_nullable_to_non_nullable
+      tags: null == tags
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -116,7 +116,7 @@ class __$$PhotoImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PhotoImpl implements _Photo {
-  const _$PhotoImpl({required this.id, required this.url, required this.tag});
+  const _$PhotoImpl({required this.id, required this.url, required this.tags});
 
   factory _$PhotoImpl.fromJson(Map<String, dynamic> json) =>
       _$$PhotoImplFromJson(json);
@@ -126,11 +126,11 @@ class _$PhotoImpl implements _Photo {
   @override
   final String url;
   @override
-  final String tag;
+  final String tags;
 
   @override
   String toString() {
-    return 'Photo(id: $id, url: $url, tag: $tag)';
+    return 'Photo(id: $id, url: $url, tags: $tags)';
   }
 
   @override
@@ -140,12 +140,12 @@ class _$PhotoImpl implements _Photo {
             other is _$PhotoImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.url, url) || other.url == url) &&
-            (identical(other.tag, tag) || other.tag == tag));
+            (identical(other.tags, tags) || other.tags == tags));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, url, tag);
+  int get hashCode => Object.hash(runtimeType, id, url, tags);
 
   @JsonKey(ignore: true)
   @override
@@ -165,7 +165,7 @@ abstract class _Photo implements Photo {
   const factory _Photo(
       {required final int id,
       required final String url,
-      required final String tag}) = _$PhotoImpl;
+      required final String tags}) = _$PhotoImpl;
 
   factory _Photo.fromJson(Map<String, dynamic> json) = _$PhotoImpl.fromJson;
 
@@ -174,7 +174,7 @@ abstract class _Photo implements Photo {
   @override
   String get url;
   @override
-  String get tag;
+  String get tags;
   @override
   @JsonKey(ignore: true)
   _$$PhotoImplCopyWith<_$PhotoImpl> get copyWith =>
