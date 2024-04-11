@@ -14,6 +14,12 @@ class _SearchListScreenState extends State<SearchListScreen> {
   final _queryTextEditingController = TextEditingController();
 
   @override
+  void dispose() {
+    _queryTextEditingController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final viewModel = context.watch<SearchListViewModel>();
 
