@@ -30,6 +30,7 @@ class _SearchListScreenState extends State<SearchListScreen> {
       body: Column(
         children: [
           TextField(
+            controller: _queryTextEditingController,
             decoration: InputDecoration(
                 border: const OutlineInputBorder(),
                 hintText: 'search word...',
@@ -37,6 +38,7 @@ class _SearchListScreenState extends State<SearchListScreen> {
                   icon: const Icon(Icons.search),
                   onPressed: () {
                     final query = _queryTextEditingController.text;
+                    print(query);
                     viewModel.onSearch(query);
                   },
                 )),
