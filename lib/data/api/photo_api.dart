@@ -8,10 +8,10 @@ class PhotoApi {
   final _url = 'https://pixabay.com/api/?key=';
 
   Future<PhotoResultDto> getPhotoResults(String query) async {
-    final replaced = query.replaceAll(' ', '\+');
+    final replaced = query.replaceAll(' ', '+');
 
     final http.Response response =
-        await http.get(Uri.parse('$_url$_key&q=$replaced&image_type=photo'));
+        await http.get(Uri.parse('$_url$_key&q=$query&image_type=photo'));
 
     final json = jsonDecode(response.body);
 
