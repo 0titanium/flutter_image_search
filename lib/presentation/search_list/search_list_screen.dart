@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_search/presentation/components/image_card_widget.dart';
 import 'package:flutter_image_search/presentation/search_list/search_list_view_model.dart';
@@ -29,18 +30,21 @@ class _SearchListScreenState extends State<SearchListScreen> {
       ),
       body: Column(
         children: [
-          TextField(
-            controller: _queryTextEditingController,
-            decoration: InputDecoration(
-                border: const OutlineInputBorder(),
-                hintText: 'search word...',
-                suffixIcon: IconButton(
-                  icon: const Icon(Icons.search),
-                  onPressed: () {
-                    final query = _queryTextEditingController.text;
-                    viewModel.onSearch(query);
-                  },
-                )),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: _queryTextEditingController,
+              decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  hintText: 'search word...',
+                  suffixIcon: IconButton(
+                    icon: const Icon(Icons.search),
+                    onPressed: () {
+                      final query = _queryTextEditingController.text;
+                      viewModel.onSearch(query);
+                    },
+                  )),
+            ),
           ),
           Expanded(
             child: Padding(
