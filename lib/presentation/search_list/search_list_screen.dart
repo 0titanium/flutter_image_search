@@ -49,9 +49,9 @@ class _SearchListScreenState extends State<SearchListScreen> {
                       child: CircularProgressIndicator(),
                     )
                   : GridView.count(
-                      crossAxisCount: 10,
+                      crossAxisCount: 2,
                       mainAxisSpacing: 10,
-                      crossAxisSpacing: 2,
+                      crossAxisSpacing: 10,
                       children: viewModel.photos
                           .map((e) => ImageCardWidget(photo: e))
                           .toList(),
