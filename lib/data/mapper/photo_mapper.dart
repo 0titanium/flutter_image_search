@@ -6,6 +6,7 @@ extension ToPhoto on Hits {
     return Photo(
       id: id!.toInt(),
       url: previewURL ?? '',
+      largeImageUrl: largeImageURL ?? '',
       tags: tags ?? '',
     );
   }
