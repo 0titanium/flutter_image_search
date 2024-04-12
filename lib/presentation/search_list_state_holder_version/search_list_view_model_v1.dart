@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_image_search/data/repository/photo_repository.dart';
 import 'package:flutter_image_search/presentation/search_list_state_holder_version/search_list_state.dart';
 
@@ -16,8 +16,8 @@ class SearchListViewModelV1 with ChangeNotifier {
     notifyListeners();
 
     _state = state.copyWith(
-        photos: await _photoRepository.getPhotos(query),
-        isLoading: false,
+      photos: await _photoRepository.getPhotos(query),
+      isLoading: false,
     );
     notifyListeners();
   }
