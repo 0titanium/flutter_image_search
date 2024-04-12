@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_search/presentation/components/image_card_widget.dart';
 import 'package:flutter_image_search/presentation/search_list/search_list_view_model.dart';
