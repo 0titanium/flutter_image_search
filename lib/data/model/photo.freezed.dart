@@ -22,6 +22,7 @@ Photo _$PhotoFromJson(Map<String, dynamic> json) {
 mixin _$Photo {
   int get id => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
+  String get largeImageUrl => throw _privateConstructorUsedError;
   String get tags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -34,7 +35,7 @@ abstract class $PhotoCopyWith<$Res> {
   factory $PhotoCopyWith(Photo value, $Res Function(Photo) then) =
       _$PhotoCopyWithImpl<$Res, Photo>;
   @useResult
-  $Res call({int id, String url, String tags});
+  $Res call({int id, String url, String largeImageUrl, String tags});
 }
 
 /// @nodoc
@@ -52,6 +53,7 @@ class _$PhotoCopyWithImpl<$Res, $Val extends Photo>
   $Res call({
     Object? id = null,
     Object? url = null,
+    Object? largeImageUrl = null,
     Object? tags = null,
   }) {
     return _then(_value.copyWith(
@@ -62,6 +64,10 @@ class _$PhotoCopyWithImpl<$Res, $Val extends Photo>
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      largeImageUrl: null == largeImageUrl
+          ? _value.largeImageUrl
+          : largeImageUrl // ignore: cast_nullable_to_non_nullable
               as String,
       tags: null == tags
           ? _value.tags
@@ -78,7 +84,7 @@ abstract class _$$PhotoImplCopyWith<$Res> implements $PhotoCopyWith<$Res> {
       __$$PhotoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String url, String tags});
+  $Res call({int id, String url, String largeImageUrl, String tags});
 }
 
 /// @nodoc
@@ -94,6 +100,7 @@ class __$$PhotoImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? url = null,
+    Object? largeImageUrl = null,
     Object? tags = null,
   }) {
     return _then(_$PhotoImpl(
@@ -104,6 +111,10 @@ class __$$PhotoImplCopyWithImpl<$Res>
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      largeImageUrl: null == largeImageUrl
+          ? _value.largeImageUrl
+          : largeImageUrl // ignore: cast_nullable_to_non_nullable
               as String,
       tags: null == tags
           ? _value.tags
@@ -116,7 +127,11 @@ class __$$PhotoImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PhotoImpl implements _Photo {
-  const _$PhotoImpl({required this.id, required this.url, required this.tags});
+  const _$PhotoImpl(
+      {required this.id,
+      required this.url,
+      required this.largeImageUrl,
+      required this.tags});
 
   factory _$PhotoImpl.fromJson(Map<String, dynamic> json) =>
       _$$PhotoImplFromJson(json);
@@ -126,11 +141,13 @@ class _$PhotoImpl implements _Photo {
   @override
   final String url;
   @override
+  final String largeImageUrl;
+  @override
   final String tags;
 
   @override
   String toString() {
-    return 'Photo(id: $id, url: $url, tags: $tags)';
+    return 'Photo(id: $id, url: $url, largeImageUrl: $largeImageUrl, tags: $tags)';
   }
 
   @override
@@ -140,12 +157,14 @@ class _$PhotoImpl implements _Photo {
             other is _$PhotoImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.url, url) || other.url == url) &&
+            (identical(other.largeImageUrl, largeImageUrl) ||
+                other.largeImageUrl == largeImageUrl) &&
             (identical(other.tags, tags) || other.tags == tags));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, url, tags);
+  int get hashCode => Object.hash(runtimeType, id, url, largeImageUrl, tags);
 
   @JsonKey(ignore: true)
   @override
@@ -165,6 +184,7 @@ abstract class _Photo implements Photo {
   const factory _Photo(
       {required final int id,
       required final String url,
+      required final String largeImageUrl,
       required final String tags}) = _$PhotoImpl;
 
   factory _Photo.fromJson(Map<String, dynamic> json) = _$PhotoImpl.fromJson;
@@ -173,6 +193,8 @@ abstract class _Photo implements Photo {
   int get id;
   @override
   String get url;
+  @override
+  String get largeImageUrl;
   @override
   String get tags;
   @override
